@@ -1,4 +1,4 @@
-package com.vehicles.project;
+package com.vehicles.types;
 
 public class Wheel {
 	private String brand;
@@ -7,5 +7,9 @@ public class Wheel {
 	public Wheel(String brand, double diameter) {
 		this.brand = brand;
 		this.diameter = diameter;
+	}
+	
+	public String getInfo() {
+		return "marca " + brand + " de diàmetre " + diameter;
 	}
 }

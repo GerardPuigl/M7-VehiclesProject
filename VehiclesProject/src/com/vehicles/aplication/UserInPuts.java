@@ -62,13 +62,15 @@ public class UserInPuts {
 		
 				System.out.print("marca: ");
 				wheelBrand=scan.next();
+		
 		do {
 			try {
 				System.out.print("diàmetre: ");
 				wheelDiameter=scan.nextDouble();
+				
 			} catch (Exception e) {
-				System.out.println("Compte, els decimals han de ser amb .");
-				wheelDiameter=0;
+				System.out.println("Has d'introduir un número. Recordatori, els decimals han de ser amb .");
+				scan.next();  	//netejar el búcle!
 			}	
 		} while (!check.checkDiameter(wheelDiameter));
 		

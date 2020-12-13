@@ -5,58 +5,76 @@ import com.vehicles.types.*;
 
 public class UserInPuts {
 
+	private DataController check=new DataController();
 	private Scanner scan=new Scanner(System.in);
 	
 	public void UserInputs() {
 	}
 	
+	//introduir matrícula
 	public String getPlate() {
+	String plate ="";
+	do {
 		System.out.println("Introduïu matrícula del vehicle :");
-		return scan.next();
+		plate = scan.next();
+	} while (!check.checkPlate(plate));	
+		return plate; 
 	}
 	
+
+	//introduir marca
 	public String getBrand() {
 		System.out.println("Introduïu marca del vehicle :");	
 		return scan.next();
 	}
 	
+	//introduir color
 	public String getColor() {
 		System.out.println("Introduïu color del vehicle :");	
 		return scan.next();
 	}
 	
+	//introduir les 2 rodes d'un eix
 	public List<Wheel> getTwoWheels()throws Exception{
-		
-		List<Wheel> twoWheels= new ArrayList<>();
 
+	List<Wheel> twoWheels= new ArrayList<>();
+	Wheel wheel1 = new Wheel("a",1);
+	Wheel wheel2 = new Wheel("b",1);
+	
+	do {
 			System.out.print("Roda esquerra, ");
-			twoWheels.add(getOneWheel());
+			wheel1 = getOneWheel();
 			System.out.print("Roda dreta, ");
-			twoWheels.add(getOneWheel());
-
+			wheel2 = getOneWheel();
+	} while (!check.checkEqualWheels(wheel1, wheel2));
+	
+		twoWheels.add(wheel1);
+		twoWheels.add(wheel2);
+		
 		return twoWheels;
 	}
 	
-	public Wheel getOneWheel() throws Exception{
+	//introduir una roda 
+	private Wheel getOneWheel() throws Exception{
 		String wheelBrand="";
 		double wheelDiameter=0;
 		
-		boolean ok=false;
-		do {
-			try {
+		
 				System.out.print("marca: ");
 				wheelBrand=scan.next();
+		do {
+			try {
 				System.out.print("diàmetre: ");
 				wheelDiameter=scan.nextDouble();
-				ok=true;
 			} catch (Exception e) {
-				System.out.println("Les dades introduides no són correctes.\n Torna-ho a intentar.");
-				ok=false;
+				System.out.println("Compte, els decimals han de ser amb .");
+				wheelDiameter=0;
 			}	
-		} while (ok=false);
+		} while (!check.checkDiameter(wheelDiameter));
 		
 		Wheel oneWheel=new Wheel(wheelBrand,wheelDiameter);
+		
 		return oneWheel;
-		}
+	}
 		
 }

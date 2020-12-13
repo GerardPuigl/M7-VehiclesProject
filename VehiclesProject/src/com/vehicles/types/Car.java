@@ -9,7 +9,7 @@ public class Car extends Vehicle {
 	}
 
 	public String getInfo() {
-		return " Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
+		return "Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
 				"Rodes davanteres " +wheels.get(0).getInfo() +"\n"+
 				"Rodes posteriors " +wheels.get(3).getInfo() ;
 	}

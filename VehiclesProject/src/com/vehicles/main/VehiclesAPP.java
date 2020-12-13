@@ -23,7 +23,7 @@ public class VehiclesAPP {
 		car1.addTwoWheels(userInPuts.getTwoWheels());
 
 
-		System.out.println(car1.getInfo());
+		System.out.println("\n"+car1.getInfo());
 		
 	}
 

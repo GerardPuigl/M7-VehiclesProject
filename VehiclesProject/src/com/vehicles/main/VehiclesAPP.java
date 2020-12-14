@@ -8,28 +8,23 @@ import com.vehicles.types.*;
 public class VehiclesAPP {
 
 	private static UserInPuts userInPuts = new UserInPuts();
-		
-	public static void main(String[] args) throws Exception
-	{
-		List<Wheel> frontWheels= new ArrayList<>();
-		List<Wheel> backWheels= new ArrayList<>();
-		
+	private static TypeConstructor constructor= new TypeConstructor();
+	
+	public static void main(String[] args) throws Exception {
+		String type;
 		//escull el tipus de vehicle
-		userInPuts.getType();
+		type= userInPuts.getType();
 		
+		Vehicle vehicle=new Vehicle() {};
+			
 		//construeix un coche
-		Car car1=new Car(userInPuts.getPlate(),userInPuts.getBrand(),userInPuts.getColor());
+		if (type=="Coche") { vehicle=constructor.createCar();}
 		
-		//demana les rodes
-		System.out.println("Introduiu dades de les rodes davanteres.");
-		frontWheels = userInPuts.getTwoWheels();
-		System.out.println("Introduiu dades rodes posteriors.");
-		backWheels = userInPuts.getTwoWheels();
-
-		//afegeix les rodes
-		car1.addWheels(frontWheels, backWheels);
-
-		System.out.println("\n"+car1.getInfo());
+		//construeix una moto
+		if (type=="Moto") {	vehicle=constructor.createBike(); }
+		
+		//imprimir informació per pantalla
+		System.out.println("\n"+vehicle.getInfo());
 		
 	}
 

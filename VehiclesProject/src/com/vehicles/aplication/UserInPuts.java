@@ -8,18 +8,26 @@ public class UserInPuts {
 	private DataController check=new DataController();
 	private Scanner scan=new Scanner(System.in);
 	
-	public void UserInputs() {
+	public UserInPuts() {
 	}
 	
 	//escollir el tipus de vehicle
 	public String getType() {
+		
+		String typeList[]={"Moto" , "Coche"};
 		String type;
+
 		do {
 			System.out.println("Voleu introduir un coche o una moto?");
 			type=scan.nextLine();
+			
+			for(String t: typeList) {
+				if(type.toUpperCase().contains(t.toUpperCase())) {
+				type=t;	
+				} 
+			}
 		} while (!check.checkType(type));
 		return type;
-		
 	}
 	
 	//introduir matrícula
@@ -66,7 +74,7 @@ public class UserInPuts {
 	}
 	
 	//introduir una roda 
-	private Wheel getOneWheel() throws Exception{
+	public Wheel getOneWheel() throws Exception{
 		String wheelBrand="";
 		double wheelDiameter=0;
 		
@@ -80,7 +88,7 @@ public class UserInPuts {
 				wheelDiameter=scan.nextDouble();
 				
 			} catch (Exception e) {
-				System.out.println("Has d'introduir un número. Recordatori, els decimals han de ser amb .");
+				System.out.println("Has d'introduir un número. Recordatori: els decimals han de ser amb coma.");
 				scan.next();  	//netejar el búcle!
 			}	
 		} while (!check.checkDiameter(wheelDiameter));

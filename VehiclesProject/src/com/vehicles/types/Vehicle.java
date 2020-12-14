@@ -15,4 +15,12 @@ public abstract class Vehicle {
 		this.brand = brand;
 		this.color = color;
 	}
+	
+	public Vehicle() {
+	}
+	
+	public String getInfo() {
+		return "No hi ha informació disponible";
+	}
+	
 }

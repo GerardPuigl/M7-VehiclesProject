@@ -11,6 +11,17 @@ public class UserInPuts {
 	public void UserInputs() {
 	}
 	
+	//escollir el tipus de vehicle
+	public String getType() {
+		String type;
+		do {
+			System.out.println("Voleu introduir un coche o una moto?");
+			type=scan.nextLine();
+		} while (!check.checkType(type));
+		return type;
+		
+	}
+	
 	//introduir matrícula
 	public String getPlate() {
 	String plate ="";

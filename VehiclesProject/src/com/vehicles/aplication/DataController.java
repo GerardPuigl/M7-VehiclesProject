@@ -1,9 +1,26 @@
 package com.vehicles.aplication;
 
+import java.nio.ShortBuffer;
+
 import com.vehicles.types.Wheel;
 
 public class DataController {
 
+	//comprovar si el tipus de vehicle és vàlid
+	public boolean checkType(String type) {
+		
+		String typeList[]={"Moto" , "Coche"};
+		
+		for(String t: typeList) {
+		    if(type.toUpperCase().contains(t.toUpperCase())) {
+		       return true;
+		    }
+		}
+		System.out.println("Aquest tipus de vehicle no existeix, torna-ho a intentar.");
+	return false;
+		
+	}
+	
 	//comprovar si la matrícula és vàlida (llegit pel mètode UserInPuts.getPlate)
 	public boolean checkPlate(String plate) {
 		if (plate.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$")) {

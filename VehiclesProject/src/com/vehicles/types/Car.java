@@ -13,6 +13,7 @@ public class Car extends Vehicle {
 				"Rodes davanteres " +wheels.get(0).getInfo() +"\n"+
 				"Rodes posteriors " +wheels.get(3).getInfo() ;
 	}
+	
 	public void addWheels(List<Wheel> frontWheels, List<Wheel> backWheels) throws Exception {
 		addTwoWheels(frontWheels);
 		addTwoWheels(backWheels);

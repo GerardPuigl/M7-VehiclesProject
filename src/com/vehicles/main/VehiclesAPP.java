@@ -1,7 +1,5 @@
 package com.vehicles.main;
 
-import java.util.*;
-
 import com.vehicles.aplication.*;
 import com.vehicles.types.*;
 
@@ -11,21 +9,26 @@ public class VehiclesAPP {
 	private static TypeConstructor constructor= new TypeConstructor();
 	
 	public static void main(String[] args) throws Exception {
-		String type;
-		//escull el tipus de vehicle
-		type= userInPuts.getType();
 		
 		Vehicle vehicle=new Vehicle() {};
+		String type;
+
+		//escull el tipus de vehicle
+		type= userInPuts.getType();
 			
-		//construeix un coche
-		if (type=="Coche") { vehicle=constructor.createCar();}
-		
-		//construeix una moto
-		if (type=="Moto") {	vehicle=constructor.createBike(); }
+		//selector de mètode de construcció del vehicle
+		switch (type) {
+		case "Coche":
+			vehicle = constructor.createCar();
+			break;
+			
+		case "Moto":
+			vehicle = constructor.createBike();
+			break;
+		}
 		
 		//imprimir informació per pantalla
 		System.out.println("\n"+vehicle.getInfo());
 		
 	}
-
 }

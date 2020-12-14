@@ -7,25 +7,21 @@ import com.vehicles.types.Wheel;
 public class DataController {
 
 	//comprovar si el tipus de vehicle és vàlid
-	public boolean checkType(String type) {
-		
+	public boolean checkType(String type) {	
 		String typeList[]={"Moto" , "Coche"};
-		
 		for(String t: typeList) {
 		    if(type.toUpperCase().contains(t.toUpperCase())) {
 		       return true;
 		    }
 		}
 		System.out.println("Aquest tipus de vehicle no existeix, torna-ho a intentar.");
-	return false;
-		
+		return false;
 	}
 	
 	//comprovar si la matrícula és vàlida (llegit pel mètode UserInPuts.getPlate)
 	public boolean checkPlate(String plate) {
 		if (plate.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$")) {
 			return true;
-
 		}else if (plate.toUpperCase().matches("^[0-9]{4}[A-Z]{2}$")) {
 			return true;
 
@@ -39,7 +35,6 @@ public class DataController {
 	public boolean checkDiameter(double wheelDiameter) {
 		if (wheelDiameter>=0.4 && wheelDiameter<=4) {
 			return true;
-
 		}else{
 			System.out.println("La roda ha de ser superior a 0,4 i inferior a 4,torna-ho a intentar");
 			return false;
@@ -48,13 +43,11 @@ public class DataController {
 	
 	//comprovar que les rodes d'un eix són iguals (llegit pel mètode UserInPuts.getTwoWheels)
 	public boolean checkEqualWheels(Wheel wheel1,Wheel wheel2) {
-		
 		if (wheel1.getInfo().equals(wheel2.getInfo())) {
 			return true;		
 		}else {
 			System.out.println("Les rodes del mateix eix han de ser iguals, torna-ho a intentar");
 			return false;
 		}
-	
 	}
 }

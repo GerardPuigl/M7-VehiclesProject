@@ -26,7 +26,7 @@ public class TypeConstructor {
 
 		//afegeix les rodes
 		car.addWheels(frontWheels, backWheels);
-	return car;
+		return car;
 	}
 	
 	//construeix una moto
@@ -42,6 +42,6 @@ public class TypeConstructor {
 
 		//afegeix les rodes
 		bike.addWheels(frontWheels, backWheels);
-	return bike;
+		return bike;
 	}
 }

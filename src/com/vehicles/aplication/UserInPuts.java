@@ -74,28 +74,27 @@ public class UserInPuts {
 	}
 	
 	//introduir una roda 
-	public Wheel getOneWheel() throws Exception{
-		String wheelBrand="";
-		double wheelDiameter=0;
-		
-		
-				System.out.print("marca: ");
-				wheelBrand=scan.next();
-		
+	public Wheel getOneWheel() throws Exception {
+		String wheelBrand = "";
+		double wheelDiameter = 0;
+
+		System.out.print("marca: ");
+		wheelBrand = scan.next();
+
 		do {
 			try {
 				System.out.print("diàmetre: ");
-				wheelDiameter=scan.nextDouble();
-				
+				wheelDiameter = scan.nextDouble();
+
 			} catch (Exception e) {
 				System.out.println("Has d'introduir un número. Recordatori: els decimals han de ser amb coma.");
-				scan.next();  	//netejar el búcle!
-			}	
+				scan.next(); // netejar el búcle!
+			}
 		} while (!check.checkDiameter(wheelDiameter));
-		
-		Wheel oneWheel=new Wheel(wheelBrand,wheelDiameter);
-		
+
+		Wheel oneWheel = new Wheel(wheelBrand, wheelDiameter);
+
 		return oneWheel;
 	}
-		
+
 }

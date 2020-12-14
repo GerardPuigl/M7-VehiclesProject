@@ -16,7 +16,7 @@ public class VehiclesAPP {
 		//escull el tipus de vehicle
 		type= userInPuts.getType();
 			
-		//selector de metode de construcció del vehicle
+		//selector de metode de construcciï¿½ del vehicle
 		switch (type) {
 		case "Coche":
 				vehicle=constructor.createCar();
@@ -26,7 +26,7 @@ public class VehiclesAPP {
 		break;
 		}
 		
-		//imprimir informació per pantalla
+		//imprimir informaciï¿½ per pantalla
 		System.out.println("\n"+vehicle.getInfo());
 		
 	}

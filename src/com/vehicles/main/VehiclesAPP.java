@@ -14,16 +14,17 @@ public class VehiclesAPP {
 		String type;
 
 		//escull el tipus de vehicle
-		type= userInPuts.getType();
-			
-		//selector de metode de construcció del vehicle
+		type= userInPuts.getType();	
+
+		//selector de mètode de construcció del vehicle
 		switch (type) {
 		case "Coche":
-				vehicle=constructor.createCar();
-		break;
+			vehicle = constructor.createCar();
+			break;
+			
 		case "Moto":
-			vehicle=constructor.createBike();
-		break;
+			vehicle = constructor.createBike();
+			break;
 		}
 		
 		//imprimir informació per pantalla

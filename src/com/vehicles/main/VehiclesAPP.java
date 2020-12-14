@@ -21,12 +21,17 @@ public class VehiclesAPP {
 		case "Coche":
 				vehicle=constructor.createCar();
 		break;
+		
 		case "Moto":
 			vehicle=constructor.createBike();
 		break;
+		
+		case "Camió":
+			vehicle=constructor.createtruck();
+		break;
 		}
 		
-		//imprimir informaci� per pantalla
+		//imprimir informació per pantalla
 		System.out.println("\n"+vehicle.getInfo());
 		
 	}

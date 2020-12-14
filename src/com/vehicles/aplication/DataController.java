@@ -6,9 +6,9 @@ import com.vehicles.types.Wheel;
 
 public class DataController {
 
-	//comprovar si el tipus de vehicle és vàlid
+	//comprovar si el tipus de vehicle ï¿½s vï¿½lid
 	public boolean checkType(String type) {	
-		String typeList[]={"Moto" , "Coche"};
+		String typeList[]={"Moto" , "Coche", "CamiÃ³"};
 		for(String t: typeList) {
 		    if(type.toUpperCase().contains(t.toUpperCase())) {
 		       return true;
@@ -18,7 +18,7 @@ public class DataController {
 		return false;
 	}
 	
-	//comprovar si la matrícula és vàlida (llegit pel mètode UserInPuts.getPlate)
+	//comprovar si la matrÃ­cula Ã©s vÃ lida (llegit pel mï¿½tode UserInPuts.getPlate)
 	public boolean checkPlate(String plate) {
 		if (plate.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$")) {
 			return true;
@@ -26,12 +26,12 @@ public class DataController {
 			return true;
 
 		}else{
-			System.out.println("Matrícula invàlida, torna-ho a intentar");
+			System.out.println("MatrÃ­cula invÃ lida, torna-ho a intentar");
 		        return false;
 		}		
 	}
 
-	//comprovar si el diàmetre és vàlid (llegit pel mètode UserInPuts.getOneWheel)
+	//comprovar si el diÃ metre Ã©s vÃ lid (llegit pel mÃ¨tode UserInPuts.getOneWheel)
 	public boolean checkDiameter(double wheelDiameter) {
 		if (wheelDiameter>=0.4 && wheelDiameter<=4) {
 			return true;
@@ -41,7 +41,7 @@ public class DataController {
 		}	
 	}
 	
-	//comprovar que les rodes d'un eix són iguals (llegit pel mètode UserInPuts.getTwoWheels)
+	//comprovar que les rodes d'un eix sÃ²n iguals (llegit pel mÃ¨tode UserInPuts.getTwoWheels)
 	public boolean checkEqualWheels(Wheel wheel1,Wheel wheel2) {
 		if (wheel1.getInfo().equals(wheel2.getInfo())) {
 			return true;		

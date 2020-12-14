@@ -14,11 +14,11 @@ public class UserInPuts {
 	//escollir el tipus de vehicle
 	public String getType() {
 		
-		String typeList[]={"Moto" , "Coche"};
+		String typeList[]={"Moto" , "Coche" ,"CamiÃ³"};
 		String type;
 
 		do {
-			System.out.println("Voleu introduir un coche o una moto?");
+			System.out.println("Quin tipus de vehicle voleu introduir? (Coche, Moto o CamiÃ³)");
 			type=scan.nextLine();
 			
 			for(String t: typeList) {
@@ -30,11 +30,11 @@ public class UserInPuts {
 		return type;
 	}
 	
-	//introduir matrícula
+	//introduir matrÃ­cula
 	public String getPlate() {
 	String plate ="";
 	do {
-		System.out.println("Introduïu matrícula del vehicle :");
+		System.out.println("Introdueix la matrÃ­cula del vehicle :");
 		plate = scan.next();
 	} while (!check.checkPlate(plate));	
 		return plate; 
@@ -43,13 +43,13 @@ public class UserInPuts {
 
 	//introduir marca
 	public String getBrand() {
-		System.out.println("Introduïu marca del vehicle :");	
+		System.out.println("Introdueix la marca del vehicle :");	
 		return scan.next();
 	}
 	
 	//introduir color
 	public String getColor() {
-		System.out.println("Introduïu color del vehicle :");	
+		System.out.println("Introdueix el color del vehicle :");	
 		return scan.next();
 	}
 	
@@ -83,12 +83,12 @@ public class UserInPuts {
 
 		do {
 			try {
-				System.out.print("diàmetre: ");
+				System.out.print("diÃ metre: ");
 				wheelDiameter = scan.nextDouble();
 
 			} catch (Exception e) {
-				System.out.println("Has d'introduir un número. Recordatori: els decimals han de ser amb coma.");
-				scan.next(); // netejar el búcle!
+				System.out.println("Has d'introduir un nÃºmero. Recordatori: els decimals han de ser amb coma.");
+				scan.next(); // netejar el bÃºcle!
 			}
 		} while (!check.checkDiameter(wheelDiameter));
 

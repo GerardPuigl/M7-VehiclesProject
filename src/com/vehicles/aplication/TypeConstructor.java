@@ -44,4 +44,21 @@ public class TypeConstructor {
 		bike.addWheels(frontWheels, backWheels);
 		return bike;
 	}
+	
+	//construeix un camió
+		public Truck createtruck() throws Exception {
+			
+			Truck truck=new Truck(userInPuts.getPlate(),userInPuts.getBrand(),userInPuts.getColor());
+		
+			//demana les rodes
+			System.out.println("Introduiu dades de les rodes davanteres.");
+			frontWheels = userInPuts.getTwoWheels();
+			System.out.println("Introduiu dades de les rodes posteriors.");
+			backWheels = userInPuts.getTwoWheels();
+
+			//afegeix les rodes
+			truck.addWheels(frontWheels, backWheels);
+			return truck;
+		}
+		
 }

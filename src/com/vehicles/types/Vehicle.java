@@ -20,7 +20,7 @@ public abstract class Vehicle {
 	}
 	
 	public String getInfo() {
-		return "No hi ha informació disponible";
+		return "No hi ha informaciÃ³ disponible";
 	}
 	
 }

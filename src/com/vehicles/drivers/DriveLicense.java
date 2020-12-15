@@ -1,5 +1,6 @@
-package drivers;
+package com.vehicles.drivers;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class DriveLicense {
@@ -9,7 +10,7 @@ public class DriveLicense {
 	private String licenseType;
 	private Date dateOfExpiry;
 	
-	public DriveLicense (String ID,String licenseType,String fullName, Date dateOfExpiry) {
+	public DriveLicense (String ID,String licenseType,String fullName, LocalDate dateOfExpiry) {
 		
 	}
 	

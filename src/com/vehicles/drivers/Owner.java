@@ -1,4 +1,4 @@
-package drivers;
+package com.vehicles.drivers;
 
 import java.util.Date;
 

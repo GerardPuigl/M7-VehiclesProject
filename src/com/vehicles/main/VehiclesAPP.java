@@ -1,14 +1,20 @@
 package com.vehicles.main;
 
+import java.time.LocalDate;
+
 import com.vehicles.aplication.*;
+import com.vehicles.drivers.Driver;
 import com.vehicles.types.*;
 
 public class VehiclesAPP {
 
-	private static UserInPuts userInPuts = new UserInPuts();
+	private static UserInVehicles userInPuts = new UserInVehicles();
+	private static UserIntroPerson userIntroPerson = new UserIntroPerson();
 	private static TypeConstructor constructor= new TypeConstructor();
 	
 	public static void main(String[] args) throws Exception {
+		
+		Driver test= new Driver("","",userIntroPerson.getBirthday());
 		
 		Vehicle vehicle=new Vehicle() {};
 		String type;
@@ -16,7 +22,7 @@ public class VehiclesAPP {
 		//escull el tipus de vehicle
 		type= userInPuts.getType();
 			
-		//selector de metode de construcci� del vehicle
+		//selector de metode de construcció del vehicle
 		switch (type) {
 		case "Coche":
 				vehicle=constructor.createCar();

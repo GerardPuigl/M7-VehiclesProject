@@ -3,12 +3,12 @@ package com.vehicles.aplication;
 import java.util.*;
 import com.vehicles.types.*;
 
-public class UserInVehicles {
+public class UserIntroVehicles {
 
 	private DataController check=new DataController();
 	private Scanner scan=new Scanner(System.in);
 	
-	public UserInVehicles() {
+	public UserIntroVehicles() {
 	}
 	
 	//escollir el tipus de vehicle

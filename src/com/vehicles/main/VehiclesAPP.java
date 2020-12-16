@@ -8,7 +8,7 @@ import com.vehicles.types.*;
 
 public class VehiclesAPP {
 
-	private static UserInVehicles userInPuts = new UserInVehicles();
+	private static UserIntroVehicles userInPuts = new UserIntroVehicles();
 	private static UserIntroPerson userIntroPerson = new UserIntroPerson();
 	private static TypeConstructor constructor= new TypeConstructor();
 	

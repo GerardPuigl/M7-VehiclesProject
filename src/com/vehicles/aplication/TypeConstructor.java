@@ -11,7 +11,7 @@ public class TypeConstructor {
 	List<Wheel> frontWheels= new ArrayList<>();
 	List<Wheel> backWheels= new ArrayList<>();
 	
-	UserInVehicles userInPuts = new UserInVehicles();
+	UserIntroVehicles userInPuts = new UserIntroVehicles();
 	
 	//construeix un coche
 	public Car createCar() throws Exception {

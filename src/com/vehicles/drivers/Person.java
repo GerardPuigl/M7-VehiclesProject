@@ -9,7 +9,7 @@ public abstract class Person {
 	protected LocalDate birthday;
 	protected DriveLicense drivelicense;
 	
-	public Person(String name, String surname, LocalDate birthday) {
+	public Person(String name, String surname, LocalDate birthday,DriveLicense driverlicence) {
 		
 	}
 	

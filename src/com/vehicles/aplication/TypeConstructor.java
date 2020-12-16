@@ -8,16 +8,17 @@ import com.vehicles.aplication.*;
 
 public class TypeConstructor {
 
-	List<Wheel> frontWheels= new ArrayList<>();
-	List<Wheel> backWheels= new ArrayList<>();
-	
+	List<Wheel> frontWheels = new ArrayList<>();
+	List<Wheel> backWheels = new ArrayList<>();
+
 	UserIntroVehicles userInPuts = new UserIntroVehicles();
-	
+	UserIntroPerson userInPutsPerson = new UserIntroPerson();
+
 	//construeix un coche
 	public Car createCar() throws Exception {
-		
-		Car car=new Car(userInPuts.getPlate(),userInPuts.getBrand(),userInPuts.getColor());
-	
+
+		Car car = new Car(userInPuts.getPlate(), userInPuts.getBrand(), userInPuts.getColor());
+
 		//demana les rodes
 		System.out.println("Introduiu dades de les rodes davanteres.");
 		frontWheels = userInPuts.getTwoWheels();
@@ -28,12 +29,12 @@ public class TypeConstructor {
 		car.addWheels(frontWheels, backWheels);
 		return car;
 	}
-	
+
 	//construeix una moto
 	public Bike createBike() throws Exception {
-		
-		Bike bike=new Bike(userInPuts.getPlate(),userInPuts.getBrand(),userInPuts.getColor());
-	
+
+		Bike bike = new Bike(userInPuts.getPlate(), userInPuts.getBrand(), userInPuts.getColor());
+
 		//demana les rodes
 		System.out.println("Introduiu dades de la roda davantera.");
 		frontWheels.add(userInPuts.getOneWheel());
@@ -44,21 +45,26 @@ public class TypeConstructor {
 		bike.addWheels(frontWheels, backWheels);
 		return bike;
 	}
-	
-	//construeix un camió
-		public Truck createtruck() throws Exception {
-			
-			Truck truck=new Truck(userInPuts.getPlate(),userInPuts.getBrand(),userInPuts.getColor());
-		
-			//demana les rodes
-			System.out.println("Introduiu dades de les rodes davanteres.");
-			frontWheels = userInPuts.getTwoWheels();
-			System.out.println("Introduiu dades de les rodes posteriors.");
-			backWheels = userInPuts.getTwoWheels();
 
-			//afegeix les rodes
-			truck.addWheels(frontWheels, backWheels);
-			return truck;
-		}
+	//construeix un camió
+	public Truck createtruck() throws Exception {
+
+		Truck truck = new Truck(userInPuts.getPlate(), userInPuts.getBrand(), userInPuts.getColor());
+
+		//demana les rodes
+		System.out.println("Introduiu dades de les rodes davanteres.");
+		frontWheels = userInPuts.getTwoWheels();
+		System.out.println("Introduiu dades de les rodes posteriors.");
+		backWheels = userInPuts.getTwoWheels();
+
+		//afegeix les rodes
+		truck.addWheels(frontWheels, backWheels);
+		return truck;
+	}
+
+	//construeix un conductor
+	public Driver createDriver() {
 		
+		return 
+	}
 }

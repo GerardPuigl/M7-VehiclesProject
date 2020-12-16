@@ -14,8 +14,7 @@ public class VehiclesAPP {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Driver test= new Driver("","",userIntroPerson.getBirthday());
-		
+
 		Vehicle vehicle=new Vehicle() {};
 		String type;
 

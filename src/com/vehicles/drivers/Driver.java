@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class Driver extends Person{
 	
-	public Driver(String name, String surname, LocalDate birthday) {
-		super(name,surname,birthday);
+	public Driver(String name, String surname, LocalDate birthday, DriveLicense driverlicence) {
+		super(name,surname,birthday,driverlicence);
 	}
 	
 	public String getInfo() {

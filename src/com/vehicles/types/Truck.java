@@ -33,5 +33,17 @@ public class Truck extends Vehicle {
 		this.wheels.add(rightWheel);
 		this.wheels.add(leftWheel);
 	}
-
+	//comprovar si la llicencia és vàlida pel vehicle
+	@Override
+	public boolean checkLicenseType(String licenseType) {	
+		
+	String licenseList[]={"C1", "C1E", "C", "CE", "D1", "D1E", "D", "DE"};
+		for(String t: licenseList) {
+		    if(licenseType.toUpperCase().contains(t.toUpperCase())) {
+		       return true;
+		    }
+		}
+		return false;
+	}
+	
 }

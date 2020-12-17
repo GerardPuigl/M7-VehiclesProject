@@ -23,4 +23,10 @@ public abstract class Vehicle {
 		return "No hi ha informació disponible";
 	}
 	
+	//comprovar si la llicencia és vàlida pel vehicle
+	public boolean checkLicenseType(String licenseType) {	
+		System.out.println("Aquest vehicle no té sistema de comprovació de llicencia.");
+		return false;
+	}
+	
 }

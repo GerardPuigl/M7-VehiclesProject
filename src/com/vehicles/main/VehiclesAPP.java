@@ -1,5 +1,4 @@
 //Mètode "UserIntroPerson.createOwner" a comentar amb el mentor. Veure més infromació al propi mètode
-//LocalDate és la manera habitual de enmagatzemar dates?
 
 package com.vehicles.main;
 
@@ -15,9 +14,7 @@ import com.vehicles.types.*;
 public class VehiclesAPP {
 
 	private static UserIntroVehicles userInVechicle = new UserIntroVehicles();
-	private static UserIntroPerson userInPerson = new UserIntroPerson();
 	private static Constructor constructor= new Constructor();
-	private static DataController checktest= new DataController();
 	
 	public static void main(String[] args) throws Exception {
 		

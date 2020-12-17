@@ -1,7 +1,8 @@
 package com.vehicles.aplication;
 
-import java.nio.ShortBuffer;
+import java.time.LocalDate;
 
+import com.vehicles.types.Vehicle;
 import com.vehicles.types.Wheel;
 
 public class DataController {
@@ -50,4 +51,15 @@ public class DataController {
 			return false;
 		}
 	}
+	//comprovar si el carnet està caducat
+	public boolean checkDateDriveLicense(LocalDate localDate) {
+		
+		if (localDate.isAfter(LocalDate.now())) {
+		return true;
+		}else{
+			System.out.println("El carnet introduït està caducat, introduïu-ne un altre.");
+		return false;
+		}
+	}
 }
+	

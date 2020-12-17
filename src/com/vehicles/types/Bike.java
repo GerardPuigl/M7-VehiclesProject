@@ -28,5 +28,19 @@ public class Bike extends Vehicle {
 		
 		this.wheels.add(oneWheel);
 	}
+	
+	//comprovar si la llicencia és vàlida pel vehicle
+	@Override
+	public boolean checkLicenseType(String licenseType) {	
+		
+	String licenseList[]={"AM", "A1", "A2", "A","B"};
+		for(String t: licenseList) {
+		    if(licenseType.toUpperCase().contains(t.toUpperCase())) {
+		       return true;
+		    }
+		}
+		return false;
+	}
+	
 
 }

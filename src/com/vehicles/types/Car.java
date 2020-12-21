@@ -10,7 +10,7 @@ public class Car extends Vehicle {
 	
 	@Override
 	public String getInfo() {
-		return "Tipus de vehicle: Coche Matr�cula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
+		return "Tipus: Coche Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
 				"Rodes davanteres " +wheels.get(0).getInfo() +"\n"+
 				"Rodes posteriors " +wheels.get(3).getInfo() ;
 	}
@@ -33,5 +33,18 @@ public class Car extends Vehicle {
 		this.wheels.add(rightWheel);
 		this.wheels.add(leftWheel);
 	}
-
+	
+	//comprovar si la llicencia és vàlida pel vehicle
+	@Override
+	public boolean checkLicenseType(String licenseType) {	
+		
+	String licenseList[]={"B", "BE", "BTP", "C1", "C1E", "C", "CE", "D1", "D1E", "D", "DE"};
+		for(String t: licenseList) {
+		    if(licenseType.toUpperCase().contains(t.toUpperCase())) {
+		       return true;
+		    }
+		}
+		return false;
+	}
+	
 }

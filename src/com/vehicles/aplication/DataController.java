@@ -1,14 +1,15 @@
 package com.vehicles.aplication;
 
-import java.nio.ShortBuffer;
+import java.time.LocalDate;
 
+import com.vehicles.types.Vehicle;
 import com.vehicles.types.Wheel;
 
 public class DataController {
-
-	//comprovar si el tipus de vehicle és vàlid
+	
+	//comprovar si el tipus de vehicle Ã©s vÃ lid
 	public boolean checkType(String type) {	
-		String typeList[]={"Moto" , "Coche"};
+		String typeList[]={"Moto" , "Coche", "CamiÃ³"};
 		for(String t: typeList) {
 		    if(type.toUpperCase().contains(t.toUpperCase())) {
 		       return true;
@@ -18,7 +19,7 @@ public class DataController {
 		return false;
 	}
 	
-	//comprovar si la matrícula és vàlida (llegit pel mètode UserInPuts.getPlate)
+	//comprovar si la matrÃ­cula Ã©s vÃ lida (llegit pel mÃ¨tode UserInPuts.getPlate)
 	public boolean checkPlate(String plate) {
 		if (plate.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$")) {
 			return true;
@@ -26,12 +27,12 @@ public class DataController {
 			return true;
 
 		}else{
-			System.out.println("Matrícula invàlida, torna-ho a intentar");
+			System.out.println("MatrÃ­cula invÃ lida, torna-ho a intentar");
 		        return false;
 		}		
 	}
 
-	//comprovar si el diàmetre és vàlid (llegit pel mètode UserInPuts.getOneWheel)
+	//comprovar si el diÃ metre Ã©s vÃ lid (llegit pel mÃ¨tode UserInPuts.getOneWheel)
 	public boolean checkDiameter(double wheelDiameter) {
 		if (wheelDiameter>=0.4 && wheelDiameter<=4) {
 			return true;
@@ -41,7 +42,7 @@ public class DataController {
 		}	
 	}
 	
-	//comprovar que les rodes d'un eix són iguals (llegit pel mètode UserInPuts.getTwoWheels)
+	//comprovar que les rodes d'un eix sÃ²n iguals (llegit pel mÃ¨tode UserInPuts.getTwoWheels)
 	public boolean checkEqualWheels(Wheel wheel1,Wheel wheel2) {
 		if (wheel1.getInfo().equals(wheel2.getInfo())) {
 			return true;		
@@ -50,4 +51,32 @@ public class DataController {
 			return false;
 		}
 	}
+	//comprovar si el carnet estÃ  caducat
+	public boolean checkDateDriveLicense(LocalDate localDate) {
+		
+		if (localDate.isAfter(LocalDate.now())) {
+		return true;
+		}else{
+			System.out.println("El carnet introduÃ¯t estÃ  caducat, introduÃ¯u-ne un altre.");
+		return false;
+		}
+	}
+	
+
+	/*
+	//confirmar si l'usuari pot conduir aquest vehicle o que introdueixi un conductor
+	if(vehicle.checkLicenseType(owner.getTypeDriverLicense())){
+		System.out.println("\nTot correcte! Propietari i vehicle registrats.");
+	}else {
+		System.out.println("\nEl propietari no pot conduir el seu propi vehicle.(Raro! perÃ² fem veure que Ã©s normal i continuem l'exercici.)");
+		System.out.println("IntroduÃ¯u un conductor amb la llicÃ¨ncia correcta per conduir el vehicle: ");
+		driver=constructor.createDriver();
+	}
+	while (!vehicle.checkLicenseType(owner.getTypeDriverLicense()) &&
+			!vehicle.checkLicenseType(driver.getTypeDriverLicense())){
+		System.out.println("El conductor introduit tampoc pot conduir el vehicle.");
+		System.out.println("IntroduÃ¯u un conductor amb la llicÃ¨ncia correcta per conduir el vehicle: ");
+		driver=constructor.createDriver();
+	*/
 }
+	

@@ -10,7 +10,7 @@ public class Bike extends Vehicle {
 	
 	@Override
 	public String getInfo() {
-		return "Tipus de vehicle: Moto Matr�cula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
+		return "Tipus: Moto Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
 				"Rodes davantera " +wheels.get(0).getInfo() +"\n"+
 				"Rodes posterior " +wheels.get(1).getInfo() ;
 	}
@@ -28,5 +28,19 @@ public class Bike extends Vehicle {
 		
 		this.wheels.add(oneWheel);
 	}
+	
+	//comprovar si la llicencia és vàlida pel vehicle
+	@Override
+	public boolean checkLicenseType(String licenseType) {	
+		
+	String licenseList[]={"AM", "A1", "A2", "A","B"};
+		for(String t: licenseList) {
+		    if(licenseType.toUpperCase().contains(t.toUpperCase())) {
+		       return true;
+		    }
+		}
+		return false;
+	}
+	
 
 }

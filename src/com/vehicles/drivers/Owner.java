@@ -17,7 +17,7 @@ public class Owner extends Person{
 	
 	@Override
 	public String getInfo() {
-		String info = "Nom: " + name +" Cognom: "+ surname + " Data de naixement: " + birthday.format(DateTimeFormatter.ofPattern("d-M-yyyy"));
+		String info = "Nom i cognom: " + name + " " + surname + " Data de naixement: " + birthday.format(DateTimeFormatter.ofPattern("d-M-yyyy"));
 		
 		if (hasGarage) {
 			info = info + " Té garatge propi.";

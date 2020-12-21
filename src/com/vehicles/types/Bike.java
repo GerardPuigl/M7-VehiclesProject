@@ -10,7 +10,7 @@ public class Bike extends Vehicle {
 	
 	@Override
 	public String getInfo() {
-		return "Tipus de vehicle: Moto Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
+		return "Tipus: Moto Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
 				"Rodes davantera " +wheels.get(0).getInfo() +"\n"+
 				"Rodes posterior " +wheels.get(1).getInfo() ;
 	}

@@ -10,6 +10,6 @@ public class Wheel {
 	}
 	
 	public String getInfo() {
-		return "marca " + brand + " de diàmetre " + diameter;
+		return "marca: " + brand + " Diàmetre: " + diameter;
 	}
 }

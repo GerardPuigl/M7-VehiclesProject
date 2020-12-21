@@ -96,5 +96,21 @@ public class UserIntroVehicles {
 
 		return oneWheel;
 	}
+	
+	//preguntar si es vol introduir més vehicles
+	public boolean moreVehicles() {
+		System.out.println("Voleu introduir un altre vehicle? (Si/No)");
+		String moreVehiclesConfirm = scan.next();
+		while (true) {
+			if ((moreVehiclesConfirm.toUpperCase().equals("SI"))) {
+				return true;
+			} else if ((moreVehiclesConfirm.toUpperCase().equals("NO"))) {
+				return false;
+			} else {
+				System.out.println("Heu d'introduir Si o No.");
+			}
+		}
+	}
+
 
 }

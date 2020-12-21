@@ -6,7 +6,7 @@ import com.vehicles.types.Vehicle;
 import com.vehicles.types.Wheel;
 
 public class DataController {
-
+	
 	//comprovar si el tipus de vehicle és vàlid
 	public boolean checkType(String type) {	
 		String typeList[]={"Moto" , "Coche", "Camió"};
@@ -61,5 +61,22 @@ public class DataController {
 		return false;
 		}
 	}
+	
+
+	/*
+	//confirmar si l'usuari pot conduir aquest vehicle o que introdueixi un conductor
+	if(vehicle.checkLicenseType(owner.getTypeDriverLicense())){
+		System.out.println("\nTot correcte! Propietari i vehicle registrats.");
+	}else {
+		System.out.println("\nEl propietari no pot conduir el seu propi vehicle.(Raro! però fem veure que és normal i continuem l'exercici.)");
+		System.out.println("Introduïu un conductor amb la llicència correcta per conduir el vehicle: ");
+		driver=constructor.createDriver();
+	}
+	while (!vehicle.checkLicenseType(owner.getTypeDriverLicense()) &&
+			!vehicle.checkLicenseType(driver.getTypeDriverLicense())){
+		System.out.println("El conductor introduit tampoc pot conduir el vehicle.");
+		System.out.println("Introduïu un conductor amb la llicència correcta per conduir el vehicle: ");
+		driver=constructor.createDriver();
+	*/
 }
 	

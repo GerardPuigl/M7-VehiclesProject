@@ -118,5 +118,20 @@ public class UserIntroPerson {
 			}
 		}
 	}
+	
+	//preguntar si es vol introduir més conductors
+	public boolean moreDrivers() {
+		System.out.println("Voleu introduir un altre conductor? (Si/No)");
+		String moreDriversConfirm = scan.next();
+		while (true) {
+			if ((moreDriversConfirm.toUpperCase().equals("SI"))) {
+				return true;
+			} else if ((moreDriversConfirm.toUpperCase().equals("NO"))) {
+				return false;
+			} else {
+				System.out.println("Heu d'introduir Si o No.");
+			}
+		}
+	}
 
 }

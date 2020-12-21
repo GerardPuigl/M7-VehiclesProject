@@ -15,7 +15,31 @@ public class Constructor {
 
 	UserIntroVehicles userInVehicle = new UserIntroVehicles();
 	UserIntroPerson userInPerson = new UserIntroPerson();
-
+	
+	private String vehicletype;
+	private Vehicle vehicle=new Vehicle() {};
+	
+	public void createVehicle() throws Exception {		//escull el tipus de vehicle
+		
+		System.out.println("Quin tipus de vechicle voleu introduir?");
+		vehicletype= userInVehicle.getType();
+			
+		//selector de metode de construcció del vehicle
+		switch (vehicletype) {
+		case "Coche":
+				vehicle=createCar();
+		break;
+		
+		case "Moto":
+			vehicle=createBike();
+		break;
+		
+		case "Camió":
+			vehicle=createtruck();
+		break;
+		}	
+	}
+	
 	//construeix un coche
 	public Car createCar() throws Exception {
 
@@ -63,7 +87,7 @@ public class Constructor {
 		truck.addWheels(frontWheels, backWheels);
 		return truck;
 	}
-
+	
 	//construeix un conductor
 	/*Mètode a comentar amb el mentor. L'objectiu és que el nom quedi com entrada de l'usuari i també registrar a la seva llicencia sense que l'hagi d'introduir dos vegades.
 	és correcte aquesta metodologia o hi ha una manera que el mètode llicencia cridi al nom del conductor des del propi mètode?? */
@@ -83,4 +107,5 @@ public class Constructor {
 							userInPerson.getHasGaraje(),userInPerson.getHasInsurance());
 		return owner;
 	}
+	
 }

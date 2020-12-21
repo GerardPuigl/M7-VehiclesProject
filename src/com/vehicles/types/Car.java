@@ -10,7 +10,7 @@ public class Car extends Vehicle {
 	
 	@Override
 	public String getInfo() {
-		return "Tipus de vehicle: Coche Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
+		return "Tipus: Coche Matrícula: " + plate + " Marca: " + brand + " Color: " + color + "\n" +
 				"Rodes davanteres " +wheels.get(0).getInfo() +"\n"+
 				"Rodes posteriors " +wheels.get(3).getInfo() ;
 	}

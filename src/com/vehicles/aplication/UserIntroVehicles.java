@@ -19,7 +19,7 @@ public class UserIntroVehicles {
 
 		do {
 			System.out.println("Quin tipus de vehicle voleu introduir? (Coche, Moto o Camió)");
-			type=scan.nextLine();
+			type=scan.next();
 			
 			for(String t: typeList) {
 				if(type.toUpperCase().contains(t.toUpperCase())) {

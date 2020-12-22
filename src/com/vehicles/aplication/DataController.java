@@ -61,22 +61,20 @@ public class DataController {
 		return false;
 		}
 	}
-	
-
-	/*
-	//confirmar si l'usuari pot conduir aquest vehicle o que introdueixi un conductor
-	if(vehicle.checkLicenseType(owner.getTypeDriverLicense())){
-		System.out.println("\nTot correcte! Propietari i vehicle registrats.");
-	}else {
-		System.out.println("\nEl propietari no pot conduir el seu propi vehicle.(Raro! però fem veure que és normal i continuem l'exercici.)");
-		System.out.println("Introduïu un conductor amb la llicència correcta per conduir el vehicle: ");
-		driver=constructor.createDriver();
+	//comprovar si el carnet està caducat
+	public boolean checkBirthDay(LocalDate localDate) {
+		
+		if (localDate.plusYears(14).isAfter(LocalDate.now())) {
+			System.out.println("La persona és massa jove.");
+			return false;
+		}else if (localDate.plusYears(120).isBefore(LocalDate.now())){
+			System.out.println("La persona té més de 120 anys");
+			return false;
+		}else {
+			return true;
+		}
 	}
-	while (!vehicle.checkLicenseType(owner.getTypeDriverLicense()) &&
-			!vehicle.checkLicenseType(driver.getTypeDriverLicense())){
-		System.out.println("El conductor introduit tampoc pot conduir el vehicle.");
-		System.out.println("Introduïu un conductor amb la llicència correcta per conduir el vehicle: ");
-		driver=constructor.createDriver();
-	*/
+
+	
 }
 	

@@ -26,8 +26,11 @@ public class UserIntroPerson {
 
 	// introduir data de naixement
 	public LocalDate getBirthday() {
-		System.out.println("Introduixe la data de naixement (dd-mm-yyyy)");
-		LocalDate date = getDate();
+		LocalDate date = LocalDate.of(1, 1, 1);
+		do {
+			System.out.println("Introduixe la data de naixement (dd-mm-yyyy)");
+			date = getDate();
+		}while(!check.checkBirthDay(date));
 		return date;
 	}
 

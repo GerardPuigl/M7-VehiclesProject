@@ -9,29 +9,36 @@ import com.vehicles.drivers.Person;
 
 public class UserIntroPerson {
 
-	private DataController check = new DataController();
+	private IntroducedDataController check = new IntroducedDataController();
 	private Scanner scan = new Scanner(System.in);
 
 	// introduir nom
+	
 	public String getName() {
 		System.out.println("Introdueix el nom: ");
 		return scan.next();
 	}
 
 	// introduir cognom
+	
 	public String getSurname() {
 		System.out.println("Introdueix el cognom: ");
 		return scan.next();
 	}
 
 	// introduir data de naixement
+	
 	public LocalDate getBirthday() {
-		System.out.println("Introduixe la data de naixement (dd-mm-yyyy)");
-		LocalDate date = getDate();
+		LocalDate date = LocalDate.of(1, 1, 1);
+		do {
+			System.out.println("Introduixe la data de naixement (dd-mm-yyyy)");
+			date = getDate();
+		}while(!check.checkBirthDay(date));
 		return date;
 	}
 
 	// introduir data de caducitat
+	
 	public LocalDate getDateExpiry() {
 		
 		LocalDate date = LocalDate.of(1, 1, 1);
@@ -60,6 +67,7 @@ public class UserIntroPerson {
 	}
 
 	// introduir llicència
+	
 	public DriveLicense getDriveLicense(String name, String surname) {
 
 		return new DriveLicense(getDriveLicenseType(), name, surname, getDateExpiry());
@@ -90,6 +98,7 @@ public class UserIntroPerson {
 	}
 
 	// introducir si té garatge
+	
 	public boolean getHasGaraje() {
 		while (true) {
 			System.out.println("Té garatge propi? (Si/No)");
@@ -105,6 +114,7 @@ public class UserIntroPerson {
 	}
 
 	// introducir si té assegurança
+	
 	public boolean getHasInsurance() {
 		while (true) {
 			System.out.println("Té asegurança? (Si/No)");
@@ -120,6 +130,7 @@ public class UserIntroPerson {
 	}
 	
 	//preguntar si es vol introduir més conductors
+	
 	public boolean moreDrivers() {
 		System.out.println("Voleu introduir un altre conductor? (Si/No)");
 		String moreDriversConfirm = scan.next();

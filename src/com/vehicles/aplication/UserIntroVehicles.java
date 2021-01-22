@@ -5,13 +5,14 @@ import com.vehicles.types.*;
 
 public class UserIntroVehicles {
 
-	private DataController check=new DataController();
+	private IntroducedDataController check=new IntroducedDataController();
 	private Scanner scan=new Scanner(System.in);
 	
 	public UserIntroVehicles() {
 	}
 	
 	//escollir el tipus de vehicle
+	
 	public String getType() {
 		
 		String typeList[]={"Moto" , "Coche" ,"Camió"};
@@ -31,6 +32,7 @@ public class UserIntroVehicles {
 	}
 	
 	//introduir matrícula
+	
 	public String getPlate() {
 	String plate ="";
 	do {
@@ -42,18 +44,21 @@ public class UserIntroVehicles {
 	
 
 	//introduir marca
+	
 	public String getBrand() {
 		System.out.println("Introdueix la marca del vehicle :");	
 		return scan.next();
 	}
 	
 	//introduir color
+	
 	public String getColor() {
 		System.out.println("Introdueix el color del vehicle :");	
 		return scan.next();
 	}
 	
 	//introduir les 2 rodes d'un eix
+	
 	public List<Wheel> getTwoWheels()throws Exception{
 
 	List<Wheel> twoWheels= new ArrayList<>();
@@ -74,6 +79,7 @@ public class UserIntroVehicles {
 	}
 	
 	//introduir una roda 
+	
 	public Wheel getOneWheel() throws Exception {
 		String wheelBrand = "";
 		double wheelDiameter = 0;
@@ -98,6 +104,7 @@ public class UserIntroVehicles {
 	}
 	
 	//preguntar si es vol introduir més vehicles
+	
 	public boolean moreVehicles() {
 		System.out.println("Voleu introduir un altre vehicle? (Si/No)");
 		String moreVehiclesConfirm = scan.next();

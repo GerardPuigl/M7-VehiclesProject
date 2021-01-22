@@ -1,7 +1,6 @@
 package com.vehicles.drivers;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public abstract class Person {
 	

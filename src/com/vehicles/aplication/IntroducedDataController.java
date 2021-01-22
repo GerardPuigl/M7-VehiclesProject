@@ -5,9 +5,10 @@ import java.time.LocalDate;
 import com.vehicles.types.Vehicle;
 import com.vehicles.types.Wheel;
 
-public class DataController {
+public class IntroducedDataController {
 	
 	//comprovar si el tipus de vehicle és vàlid
+	
 	public boolean checkType(String type) {	
 		String typeList[]={"Moto" , "Coche", "Camió"};
 		for(String t: typeList) {
@@ -20,6 +21,7 @@ public class DataController {
 	}
 	
 	//comprovar si la matrícula és vàlida (llegit pel mètode UserInPuts.getPlate)
+	
 	public boolean checkPlate(String plate) {
 		if (plate.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$")) {
 			return true;
@@ -33,6 +35,7 @@ public class DataController {
 	}
 
 	//comprovar si el diàmetre és vàlid (llegit pel mètode UserInPuts.getOneWheel)
+	
 	public boolean checkDiameter(double wheelDiameter) {
 		if (wheelDiameter>=0.4 && wheelDiameter<=4) {
 			return true;
@@ -43,6 +46,7 @@ public class DataController {
 	}
 	
 	//comprovar que les rodes d'un eix sòn iguals (llegit pel mètode UserInPuts.getTwoWheels)
+	
 	public boolean checkEqualWheels(Wheel wheel1,Wheel wheel2) {
 		if (wheel1.getInfo().equals(wheel2.getInfo())) {
 			return true;		
@@ -51,7 +55,9 @@ public class DataController {
 			return false;
 		}
 	}
+	
 	//comprovar si el carnet està caducat
+	
 	public boolean checkDateDriveLicense(LocalDate localDate) {
 		
 		if (localDate.isAfter(LocalDate.now())) {
@@ -62,6 +68,7 @@ public class DataController {
 		}
 	}
 	//comprovar si el carnet està caducat
+	
 	public boolean checkBirthDay(LocalDate localDate) {
 		
 		if (localDate.plusYears(14).isAfter(LocalDate.now())) {

@@ -30,17 +30,20 @@ public abstract class Vehicle {
 	}
 	
 	//comprovar si la llicencia és vàlida pel vehicle
+	
 	public boolean checkLicenseType(String licenseType) {	
 		System.out.println("Aquest vehicle no té sistema de comprovació de llicencia.");
 		return false;
 	}
 	
 	//declarar conductor
+	
 	public void addOwner(Owner owner) {
 		this.owner=owner;	
 	}
 	
 	//afegir conductor
+	
 	public void addDriver(Driver driver) {
 		driverList.add(driver);
 	}
